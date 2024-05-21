@@ -33,6 +33,7 @@ fn main() {
             let output = {
                 let mut child = Command::new("der2ascii")
                     .stdin(Stdio::piped())
+                    .stdout(Stdio::piped())
                     .spawn()
                     .unwrap();
                 child.stdin.as_mut().unwrap().write_all(data).unwrap();
